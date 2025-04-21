@@ -1,5 +1,4 @@
 ﻿using System.Net.Http.Json;
-using Insomniac.Calculator.API.Models;
 using Insomniac.Calculator.Web.Services.Models;
 using Microsoft.AspNetCore.Mvc.Testing;
 using NUnit.Framework;
