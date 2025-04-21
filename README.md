@@ -4,6 +4,8 @@ This Tax Calculator application helps users calculate the amount of tax they owe
 Each postal code is linked to a specific tax calculation method (**Flat Value** or **Flat Rate**), 
 and the tax is calculated accordingly using predefined rules stored in a SQLite database.
 
+SQLite database location - /Insomniac.Calculator.API/Calculator-Data.sqlite
+
 ## Features
 
 The application supports two types of tax calculators, 
