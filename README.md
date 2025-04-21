@@ -73,11 +73,11 @@ EF will apply migrations and populate:
 
 ## Project Structure
 
-/Insomniac.Calculator.API       → Web API project
-/Insomniac.Calculator.Web       → MVC Web frontend
-/Insomniac.Calculator.Data      → EF Core DbContext
-/Insomniac.Calculator.Service   → Calculator logic, Factory, Interfaces
-/Insomniac.Calculator.Tests     → Unit tests
+- /Insomniac.Calculator.API       → Web API project
+- /Insomniac.Calculator.Web       → MVC Web frontend
+- /Insomniac.Calculator.Data      → EF Core DbContext
+- /Insomniac.Calculator.Service   → Calculator logic, Factory, Interfaces
+- /Insomniac.Calculator.Tests     → Unit tests
 
 ## Technologies Used
 
