@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Insomniac.Calculator.API\\Insomniac.Calculator.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Insomniac.Calculator.Web\\Insomniac.Calculator.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

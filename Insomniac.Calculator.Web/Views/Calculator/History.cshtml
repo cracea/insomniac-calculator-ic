@@ -1,0 +1,74 @@
+@{
+    ViewBag.Title = "Calculator History";
+    Layout = "_Layout";
+}
+
+<h2>Tax History</h2>
+
+<div id="historyContainer">
+    <table id="historyTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Timestamp</th>
+                <th scope="col">Postal Code</th>
+                <th scope="col">Income</th>
+                <th scope="col">Tax</th>
+                <th scope="col">Calculator</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#historyTable').DataTable({
+                serverSide: true,
+                processing: true,
+                ajax: {
+                    url: '/Calculator/HistoryTableData',
+                    type: 'GET',
+                    data: function (d) {
+                        return {
+                            start: d.start,
+                            length: d.length,
+                        };
+                    },
+                    dataSrc: function (json) {
+                        return json.data;
+                    }
+                },
+                columns: [
+                    {
+                        data: 'timestamp',
+                        render: function (data) {
+                            return new Intl.DateTimeFormat('en-GB', {
+                                day: '2-digit',
+                                month: '2-digit',
+                                year: '2-digit',
+                                hour: '2-digit',
+                                minute: '2-digit',
+                                second: '2-digit'
+                            }).format(new Date(data));
+                        }
+                    },
+                    { data: 'postalCode' },
+                    { data: 'income' },
+                    { data: 'tax' },
+                    { data: 'calculator' }
+                ],
+                paging: true,
+                searching: false,
+                ordering: false
+            });
+        });
+    </script>
+
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
